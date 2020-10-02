@@ -1,0 +1,728 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window
+	x:Class="Testing.Window1" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Title="Car Selling System"
+	Height="600"
+	Width="1260"
+	WindowStartupLocation="CenterScreen"
+	ResizeMode="NoResize"
+	Icon="Pictures/icon.png">
+	<DockPanel>
+		<Menu
+			DockPanel.Dock="Top">
+			<MenuItem
+				Header="Dashboard"
+				Click="dashboard_btn_Click">
+				<MenuItem.Icon>
+					<Image
+						Source="Pictures/dashboard.png" />
+				</MenuItem.Icon>
+			</MenuItem>
+			<MenuItem
+				Header="Perform Inventory"
+				Height="26">
+				<MenuItem.Icon>
+					<Image
+						Source="Pictures/inventory.png"
+						Stretch="Fill" />
+				</MenuItem.Icon>
+				<MenuItem
+					Header="Purchase Car"
+					Click="purchaseCar_btn_Click">
+					<MenuItem.Icon>
+						<Image
+							Source="Pictures/purchase.png" />
+					</MenuItem.Icon>
+				</MenuItem>
+				<MenuItem
+					Header="Sell Car"
+					Click="sellCar_btn_Click">
+					<MenuItem.Icon>
+						<Image
+							Source="Pictures/cart.png" />
+					</MenuItem.Icon>
+				</MenuItem>
+				<MenuItem
+					Header="Return Car"
+					Click="returnCar_btn_Click">
+					<MenuItem.Icon>
+						<Image
+							Source="Pictures/return.png" />
+					</MenuItem.Icon>
+				</MenuItem>
+				<MenuItem
+					Header="Dispose Car"
+					Click="disposeCar_btn_Click">
+					<MenuItem.Icon>
+						<Image
+							Source="Pictures/dispose.png" />
+					</MenuItem.Icon>
+				</MenuItem>
+			</MenuItem>
+			<MenuItem
+				Header="View Inventory">
+				<MenuItem.Icon>
+					<Image
+						Source="Pictures/view.png" />
+				</MenuItem.Icon>
+				<MenuItem
+					Header="View all products"
+					Click="viewall_btn_Click">
+					<MenuItem.Icon>
+						<Image
+							Source="Pictures/all.png" />
+					</MenuItem.Icon>
+				</MenuItem>
+				<MenuItem
+					Header="View all products by Brand"
+					Click="viewcategory_btn_Click">
+					<MenuItem.Icon>
+						<Image
+							Source="Pictures/status.png" />
+					</MenuItem.Icon>
+				</MenuItem>
+				<MenuItem
+					Header="View all products by Category"
+					Click="viewbrand_btn_Click">
+					<MenuItem.Icon>
+						<Image
+							Source="Pictures/category.png" />
+					</MenuItem.Icon>
+				</MenuItem>
+				<MenuItem
+					Header="View all products by Status"
+					Click="viewstatus_btn_Click">
+					<MenuItem.Icon>
+						<Image
+							Source="Pictures/status.png" />
+					</MenuItem.Icon>
+				</MenuItem>
+			</MenuItem>
+			<MenuItem
+				Header="Update Inventory"
+				Click="update_btn_Click">
+				<MenuItem.Icon>
+					<Image
+						Source="Pictures/update.png" />
+				</MenuItem.Icon>
+			</MenuItem>
+			<MenuItem
+				Header="View Cart"
+				Click="viewcart_btn_Click">
+				<MenuItem.Icon>
+					<Image
+						Source="Pictures/cart.png" />
+				</MenuItem.Icon>
+			</MenuItem>
+		</Menu>
+		<TabControl
+			Name="CarControl"
+			Background="DarkBlue"
+			BorderBrush="Turquoise"
+			BorderThickness="20,20,20,20">
+			<TabItem
+				Header="Dashboard"
+				Visibility="Hidden">
+				<Grid
+					Margin="40">
+					<Grid.Background>
+						<ImageBrush
+							ImageSource="Pictures/carmudi.png" />
+					</Grid.Background>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition
+							Width="239.978018354393" />
+						<ColumnDefinition
+							Width="70.0219816456069" />
+						<ColumnDefinition
+							Width="0" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="Auto" />
+					</Grid.RowDefinitions>
+					<Label
+						Opacity="0.75"
+						FontWeight="SemiBold"
+						Foreground="Black"
+						Content="Dashboard"
+						FontSize="45"
+						FontFamily="Dutch801 XBd BT"
+						Background="Aqua"
+						BorderThickness="3,3,3,3"
+						BorderBrush="MidnightBlue"
+						Grid.Column="0"
+						Grid.ColumnSpan="2"
+						Grid.Row="0"
+						HorizontalAlignment="Stretch"
+						VerticalAlignment="Stretch"
+						Margin="0,0,70,0" />
+					<Label
+						Content="Total Inventory:"
+						Opacity="0.75"
+						FontFamily="Segoe UI Emoji"
+						FontWeight="SemiBold"
+						Foreground="Black"
+						FontSize="22"
+						BorderThickness="3,3,3,3"
+						Background="Turquoise"
+						BorderBrush="MediumBlue"
+						Grid.Column="0"
+						Grid.ColumnSpan="2"
+						Grid.Row="1"
+						HorizontalAlignment="Stretch"
+						VerticalAlignment="Stretch"
+						Margin="0,0,39,0" />
+					<TextBox
+						x:Name="totalinventorybox"
+						IsReadOnly="True"
+						BorderBrush="MediumBlue"
+						BorderThickness="4,4,4,4"
+						FontFamily="Segoe UI"
+						FontWeight="SemiBold"
+						FontSize="14"
+						Height="31"
+						Width="79"
+						Grid.Column="0"
+						Grid.ColumnSpan="2"
+						Grid.Row="1"
+						HorizontalAlignment="Right"
+						VerticalAlignment="Center"
+						Margin="0,0,6,0" />
+					<Label
+						Content="Total Profit:"
+						Opacity="0.75"
+						FontFamily="Segoe UI Emoji"
+						FontWeight="SemiBold"
+						Foreground="Black"
+						FontSize="22"
+						BorderThickness="3,3,3,3"
+						Background="Turquoise"
+						BorderBrush="MediumBlue"
+						Grid.Column="0"
+						Grid.ColumnSpan="2"
+						Grid.Row="2"
+						HorizontalAlignment="Stretch"
+						VerticalAlignment="Stretch"
+						Margin="0,0,39,0" />
+					<TextBox
+						FontSize="14"
+						x:Name="totalprofitbox"
+						IsReadOnly="True"
+						BorderBrush="MediumBlue"
+						BorderThickness="4,4,4,4"
+						FontWeight="SemiBold"
+						Height="33"
+						Width="79"
+						Grid.Column="0"
+						Grid.ColumnSpan="2"
+						Grid.Row="2"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Center"
+						Margin="227,0,0,0" />
+					<Label
+						Content="Total Customers:"
+						Opacity="0.75"
+						FontFamily="Segoe UI Emoji"
+						FontWeight="SemiBold"
+						Foreground="Black"
+						FontSize="22"
+						BorderThickness="3,3,3,3"
+						Background="Turquoise"
+						BorderBrush="MediumBlue"
+						Grid.Column="0"
+						Grid.ColumnSpan="2"
+						Grid.Row="3"
+						HorizontalAlignment="Stretch"
+						VerticalAlignment="Stretch"
+						Margin="0,0,39,0" />
+					<TextBox
+						MaxWidth="230"
+						TextWrapping="Wrap"
+						FontSize="14"
+						x:Name="customerbox"
+						IsReadOnly="True"
+						BorderBrush="MediumBlue"
+						BorderThickness="4,4,4,4"
+						FontWeight="SemiBold"
+						Height="33"
+						Width="78"
+						Grid.Column="0"
+						Grid.ColumnSpan="2"
+						Grid.Row="3"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Center"
+						Margin="228,0,0,0" />
+					<Label
+						Content="Total Cars Sold:"
+						Opacity="0.75"
+						FontFamily="Segoe UI Emoji"
+						FontWeight="SemiBold"
+						Foreground="Black"
+						FontSize="22"
+						BorderThickness="3,3,3,3"
+						Background="Turquoise"
+						BorderBrush="MediumBlue"
+						Grid.Column="0"
+						Grid.ColumnSpan="2"
+						Grid.Row="4"
+						HorizontalAlignment="Stretch"
+						VerticalAlignment="Stretch"
+						Margin="0,0,39,0" />
+					<TextBox
+						FontSize="14"
+						x:Name="totalcarsbox"
+						IsReadOnly="True"
+						BorderBrush="MediumBlue"
+						BorderThickness="4,4,4,4"
+						FontWeight="SemiBold"
+						Height="33"
+						Width="78"
+						Grid.Column="0"
+						Grid.ColumnSpan="2"
+						Grid.Row="4"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Center"
+						Margin="228,0,0,0" />
+					<Label
+						Content="Total Returned Cars:"
+						Opacity="0.75"
+						FontFamily="Segoe UI Emoji"
+						FontWeight="SemiBold"
+						Foreground="Black"
+						FontSize="22"
+						BorderThickness="3,3,3,3"
+						Background="Turquoise"
+						BorderBrush="MediumBlue"
+						Grid.Column="0"
+						Grid.ColumnSpan="2"
+						Grid.Row="5"
+						HorizontalAlignment="Stretch"
+						VerticalAlignment="Stretch"
+						Margin="0,0,39,0" />
+					<TextBox
+						FontSize="14"
+						x:Name="returnedbox"
+						IsReadOnly="True"
+						BorderBrush="MediumBlue"
+						BorderThickness="4,4,4,4"
+						FontWeight="SemiBold"
+						Height="35"
+						Width="78"
+						Grid.Column="0"
+						Grid.ColumnSpan="2"
+						Grid.Row="5"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Center"
+						Margin="228,0,0,0" />
+					<Label
+						Content="Total Disposed Cars :"
+						Opacity="0.75"
+						FontFamily="Segoe UI Emoji"
+						FontWeight="SemiBold"
+						Foreground="Black"
+						FontSize="22"
+						BorderThickness="3,3,3,3"
+						Background="Turquoise"
+						BorderBrush="MediumBlue"
+						Grid.Column="0"
+						Grid.ColumnSpan="2"
+						Grid.Row="6"
+						HorizontalAlignment="Stretch"
+						VerticalAlignment="Stretch"
+						Margin="0,0,39,0" />
+					<TextBox
+						FontSize="14"
+						x:Name="disposedbox"
+						IsReadOnly="True"
+						BorderBrush="MediumBlue"
+						BorderThickness="4,4,4,4"
+						FontWeight="SemiBold"
+						Height="35"
+						Width="77"
+						Grid.Column="0"
+						Grid.ColumnSpan="2"
+						Grid.Row="6"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Center"
+						Margin="229,0,0,0" />
+					<Label
+						Opacity="0.75"
+						FontFamily="Segoe UI Emoji"
+						FontWeight="SemiBold"
+						Foreground="Black"
+						FontSize="22"
+						Content="Total Unsold Cars:"
+						BorderThickness="3,3,3,3"
+						Background="Turquoise"
+						BorderBrush="MediumBlue"
+						Grid.Column="0"
+						Grid.ColumnSpan="2"
+						Grid.Row="7"
+						HorizontalAlignment="Stretch"
+						VerticalAlignment="Stretch"
+						Margin="0,0,41,0" />
+					<TextBox
+						x:Name="unsoldbox"
+						IsReadOnly="True"
+						BorderBrush="MediumBlue"
+						BorderThickness="4,4,4,4"
+						FontSize="15"
+						Height="35"
+						Grid.Column="0"
+						Grid.ColumnSpan="2"
+						Grid.Row="7"
+						VerticalAlignment="Center"
+						Width="74"
+						Margin="231,0,0,0"
+						HorizontalAlignment="Left" />
+				</Grid>
+			</TabItem>
+			<TabItem
+				Header="Perform Inventory"
+				Visibility="Hidden">
+				<Grid
+					Margin="40,40,40,40">
+					<Grid.Background>
+						<ImageBrush
+							ImageSource="Pictures/carmudi.png" />
+					</Grid.Background>
+					<Grid>
+						<StackPanel
+							Margin="0,120,0,0">
+							<Label
+								Content=""
+								FontWeight="Bold"
+								FontSize="20"
+								HorizontalAlignment="Center" />
+							<StackPanel
+								Orientation="Horizontal"
+								HorizontalAlignment="Center">
+								<Button
+									Name="select_btn"
+									Content="Return Car"
+									Width="95"
+									Margin="3"
+									Click="Select_btn_Click"
+									FontWeight="Bold"
+									Background="White" />
+								<Button
+									Name="dispose_btn"
+									Content="Dispose Car"
+									Width="95"
+									Margin="3"
+									Click="Dispose_btn_Click"
+									FontWeight="Bold"
+									Background="White" />
+								<Button
+									Name="purchase_btn"
+									Content="Purchase Car"
+									Width="95"
+									Margin="3"
+									Click="Purchase_btn_Click"
+									FontWeight="Bold"
+									Background="White" />
+								<Button
+									Name="sell_btn"
+									Content="Sell Car"
+									Width="95"
+									Margin="3"
+									Click="Sell_btn_Click"
+									FontWeight="Bold"
+									Background="White" />
+								<Button
+									Name="edit_btn"
+									Content="Edit Car"
+									Width="95"
+									Margin="3"
+									Click="EditBtn_Click"
+									FontWeight="Bold"
+									Background="White" />
+							</StackPanel>
+							<ListView
+								Name="weapon_view"
+								Margin="40,0,40,40"
+								Height="190"
+								Width="950"
+								ScrollViewer.VerticalScrollBarVisibility="Visible"
+								ScrollViewer.CanContentScroll="False"
+								Background="White">
+								<ListView.View>
+									<GridView>
+										<GridViewColumn
+											Header="ID Number"
+											Width="90">
+											<GridViewColumn.CellTemplate>
+												<DataTemplate>
+													<TextBlock
+														FontSize="15"
+														Text="{Binding IDNumber}"
+														FontWeight="Bold" />
+												</DataTemplate>
+											</GridViewColumn.CellTemplate>
+										</GridViewColumn>
+										<GridViewColumn
+											Header="Name"
+											Width="120">
+											<GridViewColumn.CellTemplate>
+												<DataTemplate>
+													<TextBlock
+														FontSize="15"
+														Text="{Binding Name}" />
+												</DataTemplate>
+											</GridViewColumn.CellTemplate>
+										</GridViewColumn>
+										<GridViewColumn
+											Header="Brand"
+											Width="145">
+											<GridViewColumn.CellTemplate>
+												<DataTemplate>
+													<TextBlock
+														FontSize="15"
+														Text="{Binding Brand}" />
+												</DataTemplate>
+											</GridViewColumn.CellTemplate>
+										</GridViewColumn>
+										<GridViewColumn
+											Header="Category"
+											Width="135">
+											<GridViewColumn.CellTemplate>
+												<DataTemplate>
+													<TextBlock
+														FontSize="15"
+														Text="{Binding Category}" />
+												</DataTemplate>
+											</GridViewColumn.CellTemplate>
+										</GridViewColumn>
+										<GridViewColumn
+											Header="Original Price"
+											Width="100">
+											<GridViewColumn.CellTemplate>
+												<DataTemplate>
+													<TextBlock
+														FontSize="15"
+														Text="{Binding OrigPrice}" />
+												</DataTemplate>
+											</GridViewColumn.CellTemplate>
+										</GridViewColumn>
+										<GridViewColumn
+											Header="Retail Price"
+											Width="100">
+											<GridViewColumn.CellTemplate>
+												<DataTemplate>
+													<TextBlock
+														FontSize="15"
+														Text="{Binding RetailPrice}" />
+												</DataTemplate>
+											</GridViewColumn.CellTemplate>
+										</GridViewColumn>
+										<GridViewColumn
+											Header="Available Quantity"
+											Width="120">
+											<GridViewColumn.CellTemplate>
+												<DataTemplate>
+													<TextBlock
+														FontSize="15"
+														Text="{Binding AvailQuantity}" />
+												</DataTemplate>
+											</GridViewColumn.CellTemplate>
+										</GridViewColumn>
+										<GridViewColumn
+											Header="Status"
+											Width="95">
+											<GridViewColumn.CellTemplate>
+												<DataTemplate>
+													<TextBlock
+														FontSize="15"
+														Text="{Binding Status}" />
+												</DataTemplate>
+											</GridViewColumn.CellTemplate>
+										</GridViewColumn>
+									</GridView>
+								</ListView.View>
+								<ListView.GroupStyle>
+									<GroupStyle>
+										<GroupStyle.HeaderTemplate>
+											<DataTemplate>
+												<!-- You can customize the group header here -->
+												<StackPanel
+													Orientation="Horizontal"
+													VerticalAlignment="Bottom">
+													<TextBlock
+														Text="{Binding Name}"
+														FontWeight="Bold"
+														FontSize="16"
+														Foreground="Red" />
+													<TextBlock
+														Text="{Binding ItemCount}"
+														FontWeight="Bold"
+														FontSize="14"
+														Margin="8,0"
+														Foreground="Green" />
+													<TextBlock
+														Text="Unit(s)"
+														FontSize="14"
+														FontStyle="Italic"
+														Foreground="Gray" />
+												</StackPanel>
+											</DataTemplate>
+										</GroupStyle.HeaderTemplate>
+									</GroupStyle>
+								</ListView.GroupStyle>
+								<ListView.ItemContainerStyle>
+									<Style
+										TargetType="{x:Type ListViewItem}">
+										<EventSetter
+											Event="MouseDoubleClick"
+											Handler="ListViewItem_MouseDoubleClick" />
+									</Style>
+								</ListView.ItemContainerStyle>
+							</ListView>
+						</StackPanel>
+					</Grid>
+				</Grid>
+			</TabItem>
+			<TabItem
+				Header="Cart"
+				RenderTransformOrigin="0.5,0.5"
+				Visibility="Hidden">
+				<Grid>
+					<Grid.Background>
+						<ImageBrush
+							ImageSource="Pictures/carmudi.png" />
+					</Grid.Background>
+					<ScrollViewer
+						VerticalScrollBarVisibility="Auto"
+						HorizontalScrollBarVisibility="Auto"
+						Margin="0,150,0,0">
+						<StackPanel>
+							<Label
+								Content=""
+								FontWeight="Bold"
+								FontSize="20"
+								HorizontalAlignment="Center" />
+							<StackPanel
+								Orientation="Horizontal"
+								HorizontalAlignment="Center">
+								<StackPanel
+									Orientation="Horizontal"
+									HorizontalAlignment="Center">
+									<Button
+										Name="confirmsell_btn"
+										Content="Confirm Purchase"
+										Width="120"
+										Margin="3"
+										Click="confirm_btn_Click"
+										FontWeight="Bold" />
+									<Button
+										Name="removeselect_btn"
+										Content="Remove Selection"
+										Width="120"
+										Margin="3"
+										Click="remove_btn_Click"
+										FontWeight="Bold" />
+									<Button
+										Name="clear_btn"
+										Content="Clear Cart"
+										Width="120"
+										Margin="3"
+										Click="clear_btn_Click"
+										FontWeight="Bold" />
+								</StackPanel>
+							</StackPanel>
+							<ListView
+								Name="selected_view"
+								Margin="5"
+								Height="250"
+								Width="640"
+								ScrollViewer.VerticalScrollBarVisibility="Visible"
+								ScrollViewer.CanContentScroll="False">
+								<ListView.View>
+									<GridView>
+										<GridViewColumn
+											Header="ID Number"
+											Width="80">
+											<GridViewColumn.CellTemplate>
+												<DataTemplate>
+													<TextBlock
+														Text="{Binding IDNumber}"
+														FontWeight="Bold" />
+												</DataTemplate>
+											</GridViewColumn.CellTemplate>
+										</GridViewColumn>
+										<GridViewColumn
+											Header="Name"
+											Width="80"
+											DisplayMemberBinding="{Binding Name}" />
+										<GridViewColumn
+											Header="Brand"
+											Width="55"
+											DisplayMemberBinding="{Binding Brand}" />
+										<GridViewColumn
+											Header="Original Price"
+											Width="100"
+											DisplayMemberBinding="{Binding OrigPrice}" />
+										<GridViewColumn
+											Header="Retail Price"
+											Width="100"
+											DisplayMemberBinding="{Binding RetailPrice}" />
+										<GridViewColumn
+											Header="Quantity"
+											Width="70"
+											DisplayMemberBinding="{Binding Quantity}" />
+										<GridViewColumn
+											Header="Total Price"
+											Width="120"
+											DisplayMemberBinding="{Binding TotalPriceSell}" />
+									</GridView>
+								</ListView.View>
+								<ListView.ItemContainerStyle>
+									<Style
+										TargetType="{x:Type ListViewItem}">
+										<EventSetter
+											Event="MouseDoubleClick"
+											Handler="ListViewItem_MouseDoubleClick" />
+									</Style>
+								</ListView.ItemContainerStyle>
+							</ListView>
+						</StackPanel>
+					</ScrollViewer>
+				</Grid>
+			</TabItem>
+		</TabControl>
+	</DockPanel>
+</Window>
